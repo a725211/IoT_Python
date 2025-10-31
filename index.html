@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;IoT HTML Dashboard&lt;/title&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Bootstrap 5 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- jQuery --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Bootstrap JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Font Awesome --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--c-black:#000000;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--c-green:#99CC00;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--c-red:#CC0033;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, var(--c-black), #222);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: "Segoe UI", Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Navbar */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.navbar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(0,0,0,0.85);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.navbar-brand {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--c-green) !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.navbar-brand:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--c-red) !important;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-link {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff !important;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-link::after {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content:"";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position:absolute;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>bottom:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>left:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width:0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height:2px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--c-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition:width .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-link:hover::after { width:100%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.nav-link:hover { color:var(--c-green)!important; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Hero Section */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 90vh;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://picsum.photos/1200/800?random=8');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-size: cover;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-position: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 4rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(45deg,var(--c-green),var(--c-red));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip:text;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-text-fill-color:transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>animation: glow 2s infinite alternate;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero p {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes glow {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>from { text-shadow:0 0 10px var(--c-green); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>to { text-shadow:0 0 20px var(--c-red),0 0 30px var(--c-red); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-main {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(45deg,var(--c-green),var(--c-red));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-main:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-3px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow:0 0 20px rgba(153,204,0,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Card Section */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--c-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 800;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 4rem 0 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card-iot {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: rgba(255,255,255,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid rgba(255,255,255,0.2);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card-iot:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(-8px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 15px 30px rgba(153,204,0,0.25);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--c-green);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card-iot i {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--c-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: all .3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card-iot:hover i {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--c-red);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transform: rotate(10deg) scale(1.1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:#aaa;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size:.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding:2rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-top:1px solid rgba(255,255,255,0.1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top:3rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Navbar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;nav class="navbar navbar-expand-lg fixed-top"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="navbar-brand" href="#"&gt;IoT Dashboard&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="collapse navbar-collapse" id="nav"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="navbar-nav ms-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#overview"&gt;Overview&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#cards"&gt;Devices&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/nav&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Hero Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;IoT Dashboard&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p class="mb-4"&gt;Real-time Monitoring &amp; Control Interface&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn-main" id="scrollBtn"&gt;Explore Dashboard&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Cards Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="cards" class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Device Status&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="row g-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="col-md-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card-iot text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;i class="fas fa-thermometer-half"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h4&gt;Temperature&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;span id="tempValue"&gt;26.4&lt;/span&gt; °C&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="col-md-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card-iot text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;i class="fas fa-tint"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h4&gt;Humidity&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;span id="humValue"&gt;55&lt;/span&gt; %&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="col-md-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="card-iot text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;i class="fas fa-lightbulb"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;h4&gt;Light Sensor&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;span id="lightValue"&gt;720&lt;/span&gt; lux&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Contact Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section id="contact" class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2 class="section-title"&gt;Contact&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;Designed for Raspberry Pi / LAMP IoT Systems&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="mailto:aiotlab@example.com" class="btn btn-outline-light px-4 mt-2"&gt;Email Us&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>© 2025 IoT HTML Dashboard Template — Powen Ko Class / AIoT Lab</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Smooth scroll</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#scrollBtn").on("click", function(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$('html, body').animate({ scrollTop: $("#cards").offset().top - 60 }, 800);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Simulate random data update</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setInterval(function(){</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("#tempValue").text((24 + Math.random()*4).toFixed(1));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("#humValue").text((50 + Math.random()*10).toFixed(0));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>$("#lightValue").text((700 + Math.random()*100).toFixed(0));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, 3000);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
